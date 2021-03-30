@@ -1,10 +1,20 @@
 <template>
-  <div>Messages!</div>
+    <div class="h96 w-full">
+        <div class="h-full p-2 flex flex-col-reverse overflow-scroll">
+            <div v-for="(message, index) in messages" :key="index">
+                <message-item :message="message" />
+            </div>
+        </div>
+    </div>
 </template>
 
 <script>
-export default {};
+import messageItem from "./messageItem.vue";
+
+export default {
+    props: ["messages"],
+    components: { messageItem },
+};
 </script>
 
-<style>
-</style>
+<style></style>

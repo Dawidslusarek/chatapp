@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\NewMessage;
 use App\Models\ChatRoom;
 use App\Models\Message;
 use Illuminate\Http\Request;
@@ -18,7 +19,6 @@ class ChatController extends Controller
     {
         return ChatRoom::all();
     }
-
     public function messages(Request $r, $id)
     {
         return Message::where('room_id', $id)
@@ -33,6 +33,8 @@ class ChatController extends Controller
         $message->room_id = $id;
         $message->message = $r->message;
         $message->save();
+
+        broadcast(new NewMessage($message))->toOthers();
 
         return $message;
     }
