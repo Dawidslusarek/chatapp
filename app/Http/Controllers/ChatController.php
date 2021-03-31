@@ -15,9 +15,9 @@ class ChatController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(ChatRoom $rooms)
     {
-        return ChatRoom::all();
+        return $rooms->all();
     }
     public function messages(Request $r, $id)
     {

@@ -56,7 +56,7 @@ export default {
             if (this.currentRoom.id) {
                 // let vm = this;
                 this.getMessages();
-                window.Echo.private(`chat.${this.currentRoom.id}`).listen(
+                Echo.private(`chat.${this.currentRoom.id}`).listen(
                     "NewMessage",
                     (e) => {
                         this.getMessages();
@@ -65,7 +65,7 @@ export default {
             }
         },
         disconnect(room) {
-            window.Echo.leave(`chat.${room.id}`);
+            Echo.leave(`chat.${room.id}`);
         },
         getRooms() {
             axios
