@@ -65,7 +65,6 @@ export default {
             }
         },
         disconnect(room) {
-            alert(room.id);
             window.Echo.leave(`chat.${room.id}`);
         },
         getRooms() {
@@ -95,7 +94,6 @@ export default {
     },
     created() {
         this.getRooms();
-        this.getMessages();
     },
 };
 </script>
