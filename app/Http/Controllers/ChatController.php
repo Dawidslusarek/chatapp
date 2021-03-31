@@ -37,4 +37,10 @@ class ChatController extends Controller
 
         return $message;
     }
+    public function deleteMessages(Message $message, $id)
+    {
+        $message->where('room_id', $id)
+            ->with('user')
+            ->delete();
+    }
 }

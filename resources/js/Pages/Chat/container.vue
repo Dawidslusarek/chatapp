@@ -66,6 +66,7 @@ export default {
         },
         disconnect(room) {
             Echo.leave(`chat.${room.id}`);
+            this.deleteMessages(room.id);
         },
         getRooms() {
             axios
@@ -86,6 +87,16 @@ export default {
                 .get(`chat/room/${this.currentRoom.id}/messages`)
                 .then((res) => {
                     this.messages = res.data;
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
+        },
+        deleteMessages(room) {
+            axios
+                .delete(`chat/room/${room}/messages`)
+                .then(() => {
+                    console.log("delete completed!");
                 })
                 .catch((error) => {
                     console.log(error);
