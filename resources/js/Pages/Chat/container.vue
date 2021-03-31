@@ -54,18 +54,19 @@ export default {
     methods: {
         connect() {
             if (this.currentRoom.id) {
-                let vm = this;
+                // let vm = this;
                 this.getMessages();
-                window.Echo.private("chat." + this.currentRoom.id).listen(
-                    ".message.new",
+                window.Echo.private(`chat.${this.currentRoom.id}`).listen(
+                    "NewMessage",
                     (e) => {
-                        vm.getMessages();
+                        this.getMessages();
                     }
                 );
             }
         },
         disconnect(room) {
-            window.Echo.leave("chat." + room.id);
+            alert(room.id);
+            window.Echo.leave(`chat.${room.id}`);
         },
         getRooms() {
             axios
