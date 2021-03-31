@@ -19,16 +19,15 @@ class ChatController extends Controller
     {
         return $rooms->all();
     }
-    public function messages(Request $r, $id)
+    public function messages(Message $message, $id)
     {
-        return Message::where('room_id', $id)
+        return $message->where('room_id', $id)
             ->with('user')
             ->orderBy('created_at', 'DESC')
             ->get();
     }
-    public function newMessage(Request $r, $id)
+    public function newMessage(Request $r, Message $message, $id)
     {
-        $message = new Message;
         $message->user_id = Auth::id();
         $message->room_id = $id;
         $message->message = $r->message;
@@ -37,70 +36,5 @@ class ChatController extends Controller
         broadcast(new NewMessage($message))->toOthers();
 
         return $message;
-    }
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
     }
 }
