@@ -34,8 +34,8 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/chat', function () {
 })->name('Chat');
 
 Route::middleware('auth:sanctum')->get('/chat/rooms', [ChatController::class, 'index']);
-Route::middleware('auth:sanctum')->group(function () {
-    Route::get('/chat/room/{roomId}/messages', [ChatController::class, 'messages']);
-    Route::post('/chat/room/{roomId}/message', [ChatController::class, 'newMessage']);
-    Route::delete('/chat/room/{roomId}/messages', [ChatController::class, 'deleteMessages']);
+Route::middleware('auth:sanctum')->prefix('/chat/room/{roomId}/')->group(function () {
+    Route::get('messages', [ChatController::class, 'messages']);
+    Route::post('message', [ChatController::class, 'newMessage']);
+    Route::delete('messages', [ChatController::class, 'deleteMessages']);
 });
