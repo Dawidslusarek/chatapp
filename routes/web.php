@@ -39,3 +39,4 @@ Route::middleware('auth:sanctum')->prefix('/chat/room/{roomId}/')->group(functio
     Route::post('message', [ChatController::class, 'newMessage']);
     Route::delete('messages', [ChatController::class, 'deleteMessages']);
 });
+Route::middleware('auth:sanctum')->get('/userid', [ChatController::class, 'getUserId']);

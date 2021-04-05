@@ -5,9 +5,9 @@ namespace App\Http\Controllers;
 use App\Events\NewMessage;
 use App\Models\ChatRoom;
 use App\Models\Message;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-
 class ChatController extends Controller
 {
     /**
@@ -26,6 +26,10 @@ class ChatController extends Controller
             ->orderBy('created_at', 'DESC')
             ->get();
     }
+    public function getUserId(){
+        $id = Auth::id();
+        return $id;
+    }
     public function newMessage(Request $r, Message $message, $id)
     {
         $message->user_id = Auth::id();
@@ -39,8 +43,13 @@ class ChatController extends Controller
     }
     public function deleteMessages(Message $message, $id)
     {
-        $message->where('room_id', $id)
-            ->with('user')
+        $user_id = Auth::id();
+        $message
+            ->where([
+                ['room_id', '=', $id],
+                ['user_id', '=', $user_id]
+            ])
+
             ->delete();
     }
 }

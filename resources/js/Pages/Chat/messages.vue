@@ -14,7 +14,7 @@ import messageItem from "./messageItem.vue";
 export default {
     props: ["messages"],
     components: { messageItem },
-};
+}
 </script>
 
 <style></style>
