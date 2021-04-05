@@ -3,9 +3,9 @@
         <span
             class="messages rounded-lg"
             :class="
-                userId == message.user_id
-                    ? ['float-right', 'different']
-                    : ['float-left', 'mymessage']
+                userId != message.user_id
+                    ? ['float-left', 'different']
+                    : ['float-right', 'mymessage']
             "
         >
             <span class="font-semibold antialiased">{{ message.user.name }}</span
