@@ -8,9 +8,9 @@
                     : ['float-left', 'mymessage']
             "
         >
-            <span class="user">{{ message.user.name }}</span
+            <span class="font-semibold antialiased">{{ message.user.name }}</span
             >:
-            <span class="message">{{ message.message }}</span>
+            <span class="font-thin antialiased">{{ message.message }}</span>
         </span>
     </div>
 </template>
@@ -53,8 +53,5 @@ export default {
 }
 .different {
     background: #838383;
-}
-.user{
-    font-weight: 700;
 }
 </style>
