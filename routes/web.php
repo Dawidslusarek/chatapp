@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BadwordController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ChatController;
@@ -25,18 +26,24 @@ Route::get('/', function () {
     ]);
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->name('dashboard');
+Route::middleware(['auth:sanctum', 'verified'])->group(function() {
+    Route::get('/dashboard', function () {
+        return Inertia::render('Dashboard');
+    })->name('dashboard');
+    Route::get('/chat', function () {
+        return Inertia::render('Chat/container');
+    })->name('Chat');
+});
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/chat', function () {
-    return Inertia::render('Chat/container');
-})->name('Chat');
+Route::middleware('auth:sanctum')->group(function() {
+Route::get('/userid', [ChatController::class, 'getUserId']);
+Route::get('/chat/rooms', [ChatController::class, 'index']);
+Route::get('/badwords',[BadwordController::class,'index']);
+});
 
-Route::middleware('auth:sanctum')->get('/chat/rooms', [ChatController::class, 'index']);
 Route::middleware('auth:sanctum')->prefix('/chat/room/{roomId}/')->group(function () {
     Route::get('messages', [ChatController::class, 'messages']);
     Route::post('message', [ChatController::class, 'newMessage']);
     Route::delete('messages', [ChatController::class, 'deleteMessages']);
 });
-Route::middleware('auth:sanctum')->get('/userid', [ChatController::class, 'getUserId']);
+

@@ -26,6 +26,7 @@
         "vue-loader": "^16.1.2"
     },
     "dependencies": {
+        "bad-words": "^3.0.4",
         "laravel-echo": "^1.10.0",
         "moment": "^2.29.1",
         "pusher-js": "^7.0.3",

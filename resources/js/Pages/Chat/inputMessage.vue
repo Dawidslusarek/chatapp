@@ -5,11 +5,11 @@
             type="text"
             class="col-span-5 p-2 outline-none border-none"
             v-model="message"
-            @keyup.enter="sendMessage()"
+            @keyup.enter="badWordsFilter()"
             placeholder="write someting"
         />
         <button
-            @click="sendMessage()"
+            @click="badWordsFilter()"
             class="col-span-1 bg-gray-500 hover:bg-blue-700 p-2 rounded text-white"
         >
             Send Message
@@ -47,8 +47,19 @@ export default {
                     console.log(error);
                 });
         },
+        badWordsFilter() {
+         var Filter = require('bad-words');
+         var filter = new Filter();
+        filter.addWords('ćma', 'naleśnik', 'ćwikła');
+            if(filter.isProfane(this.message)){
+               this.message = filter.clean(this.message);
+               this.sendMessage();
+            }else {
+                this.sendMessage();
+            }
     },
-};
+},
+}
 </script>
 
 <style></style>
