@@ -7,7 +7,10 @@ use App\Models\ChatRoom;
 use App\Models\Message;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Config;
+
 class ChatController extends Controller
 {
     /**
@@ -21,12 +24,17 @@ class ChatController extends Controller
     }
     public function messages(Message $message, $id)
     {
-        return $message->where('room_id', $id)
+
+        return $message
+            ->join('users', 'users.id', '=', 'messages.user_id')
+            ->where('messages.created_at', '>=','users.last_login')
+            ->where('messages.room_id','=',$id)
             ->with('user')
-            ->orderBy('created_at', 'DESC')
+            ->orderBy('messages.created_at', 'DESC')
             ->get();
     }
-    public function getUserId(){
+    public function getUserId()
+    {
         $id = Auth::id();
         return $id;
     }
