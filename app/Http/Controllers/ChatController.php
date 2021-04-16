@@ -29,7 +29,6 @@ class ChatController extends Controller
         $idUser = Auth::id();
         return [
             $message
-                ->join('users', 'users.id', '=', 'messages.user_id')
                 ->where('messages.room_id', '=', $id)
                 ->with('user')
                 ->orderBy('messages.created_at', 'DESC')
