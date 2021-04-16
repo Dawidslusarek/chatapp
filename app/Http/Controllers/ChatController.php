@@ -30,11 +30,10 @@ class ChatController extends Controller
         return [
             $message
                 ->join('users', 'users.id', '=', 'messages.user_id')
-                ->where(DB::raw('users.id'), '=', DB::raw('messages.user_id'))
-                ->where(DB::raw('messages.created_at'), '>=', DB::raw('users.last_login'))
                 ->where('messages.room_id', '=', $id)
                 ->with('user')
                 ->orderBy('messages.created_at', 'DESC')
+                ->limit(50)
                 ->get(),
             $idUser
         ];
