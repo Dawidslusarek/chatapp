@@ -10,6 +10,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\DB;
+
 
 class ChatController extends Controller
 {
@@ -24,19 +26,18 @@ class ChatController extends Controller
     }
     public function messages(Message $message, $id)
     {
-
-        return $message
-            ->join('users', 'users.id', '=', 'messages.user_id')
-            ->where('messages.created_at', '>=','users.last_login')
-            ->where('messages.room_id','=',$id)
-            ->with('user')
-            ->orderBy('messages.created_at', 'DESC')
-            ->get();
-    }
-    public function getUserId()
-    {
-        $id = Auth::id();
-        return $id;
+        $idUser = Auth::id();
+        return [
+            $message
+                ->join('users', 'users.id', '=', 'messages.user_id')
+                ->where(DB::raw('users.id'), '=', DB::raw('messages.user_id'))
+                ->where(DB::raw('messages.created_at'), '>=', DB::raw('users.last_login'))
+                ->where('messages.room_id', '=', $id)
+                ->with('user')
+                ->orderBy('messages.created_at', 'DESC')
+                ->get(),
+            $idUser
+        ];
     }
     public function newMessage(Request $r, Message $message, $id)
     {
