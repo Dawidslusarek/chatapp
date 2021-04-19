@@ -1,7 +1,7 @@
 <template>
     <app-layout>
-                                        
-              
+
+
         <i class="jd1"><a href="/register">Zarejestruj się</a>
         <a href="/login"> <z style="margin-right:20px;">Zaloguj się</z> </a></i>
 
@@ -24,12 +24,12 @@
             <p class="stack">Do stworzenia chatu użyliśmy:</p>
             <div class="flexik">
             <img src="https://miro.medium.com/max/900/1*OrjCKmou1jT4It5so5gvOA.jpeg">
-            <img src="http://www.blog.molitorys.pl/wp-content/uploads/2020/09/Laravel-8-logo.jpg">
+            <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--R6WSvG10--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/v8h2ztgkxtdhys0z0z9f.png">
             <img src="https://laravelnews.imgix.net/images/jetstream.png?ixlib=php-3.3.0">
             </div>
                     <br>
                     <div class="buttons">
-                    <a href="/chat" class="btn effect04" data-sm-link-text="Kliknij :D" target="_blank"><span>Chat</span></a>
+                    <a href="/chat" class="btn effect04" data-sm-link-text="Kliknij :D"><span>Chat</span></a>
                     </div>
             <br>
             <p class="autors">Autorzy: 123456789</p>
@@ -79,7 +79,7 @@ p{
 }
 .jd{
     font-size:30px;
-    
+
 }
 
 .jd1{
@@ -87,7 +87,7 @@ p{
     display: flex;
     flex-direction: row-reverse;
     margin-right:10px;
-    
+
 }
 
 
@@ -132,7 +132,7 @@ h1 {
   text-transform: uppercase;
   width: 100%;
   background-color:#FF3E41;
-  
+
 }
 .btn:hover {
   text-decoration: none;
