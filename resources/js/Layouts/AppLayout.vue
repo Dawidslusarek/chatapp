@@ -10,7 +10,7 @@
             <div class="flex">
               <!-- Logo -->
               <div class="flex-shrink-0 flex items-center">
-                <img src="http://www.zsz2.ostrzeszow.pl/images/logo_zs2.png" width="70px">
+                <img src="https://zsnr2chatapp.herokuapp.com/images/logo_zs2.png" width="70px">
               </div>
 
               <!-- Navigation Links -->

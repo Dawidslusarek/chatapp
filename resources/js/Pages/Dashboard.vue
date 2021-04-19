@@ -19,9 +19,9 @@
             <br>
             <p class="stack">Do stworzenia chatu użyliśmy:</p>
             <div class="flexik">
-            <img src="https://miro.medium.com/max/900/1*OrjCKmou1jT4It5so5gvOA.jpeg">
-            <img src="https://www.blog.molitorys.pl/wp-content/uploads/2020/09/Laravel-8-logo.jpg">
-            <img src="https://laravelnews.imgix.net/images/jetstream.png?ixlib=php-3.3.0">
+               <img src="https://zsnr2chatapp.herokuapp.com/images/vue.jpeg">
+            <img src="https://zsnr2chatapp.herokuapp.com/images/laravel.jpg">
+            <img src="https://zsnr2chatapp.herokuapp.com/images/jetstream.jpg">
              <br>
 
             </div>

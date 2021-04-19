@@ -1,7 +1,7 @@
 <template>
     <jet-authentication-card>
         <template #logo>
-           <img src="https://www.zsz2.ostrzeszow.pl/images/logo_zs2.png" width="70px"/>
+           <img src="https://zsnr2chatapp.herokuapp.com/images/logo_zs2.png" width="70px"/>
         </template>
 
         <jet-validation-errors class="mb-4" />
