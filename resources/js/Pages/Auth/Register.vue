@@ -1,7 +1,7 @@
 <template>
     <jet-authentication-card>
         <template #logo>
-           <img src="http://www.zsz2.ostrzeszow.pl/images/logo_zs2.png" width="70px"/>
+           <img src="https://www.zsz2.ostrzeszow.pl/images/logo_zs2.png" width="70px"/>
         </template>
 
         <jet-validation-errors class="mb-4" />
@@ -16,7 +16,7 @@
                 <jet-label for="school" value="Szkoła" />
                 <jet-input id="school" type="text" class="mt-1 block w-full" v-model="form.school" required autocomplete="school" />
             </div>
-            
+
             <div class="mt-4">
                 <jet-label for="town" value="Miejscowość" />
                 <jet-input id="town" type="text" class="mt-1 block w-full" v-model="form.town" required autocomplete="town" />

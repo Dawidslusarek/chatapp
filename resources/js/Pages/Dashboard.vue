@@ -20,10 +20,10 @@
             <p class="stack">Do stworzenia chatu użyliśmy:</p>
             <div class="flexik">
             <img src="https://miro.medium.com/max/900/1*OrjCKmou1jT4It5so5gvOA.jpeg">
-            <img src="http://www.blog.molitorys.pl/wp-content/uploads/2020/09/Laravel-8-logo.jpg">
+            <img src="https://www.blog.molitorys.pl/wp-content/uploads/2020/09/Laravel-8-logo.jpg">
             <img src="https://laravelnews.imgix.net/images/jetstream.png?ixlib=php-3.3.0">
              <br>
-             
+
             </div>
              <div class="buttons">
             <a href="/chat" class="btn effect04" data-sm-link-text="Kliknij :D"><span>Chat</span></a>
@@ -100,7 +100,7 @@ h1 {
   text-transform: uppercase;
   width: 100%;
   background-color:#FF3E41;
-  
+
 }
 .btn:hover {
   text-decoration: none;
