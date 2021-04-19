@@ -59,23 +59,23 @@ class ChatRoomSeeder extends Seeder
         ]);
 
         DB::table('chat_rooms')->insert([
-            'name' => 'Nierób profil informatyczno-językowy'
+            'name' => 'LO profil informatyczno-językowy'
         ]);
 
         DB::table('chat_rooms')->insert([
-            'name' => 'Nierób profil biologiczno-chemiczny z kosmetologią i promocją zdrowia'
+            'name' => 'LO profil biologiczno-chemiczny z kosmetologią i promocją zdrowia'
         ]);
 
         DB::table('chat_rooms')->insert([
-            'name' => 'Nierób profil turystyczno-europejski'
+            'name' => 'LO profil profil turystyczno-europejski'
         ]);
 
         DB::table('chat_rooms')->insert([
-            'name' => 'Nierób Mechanik pojazdów samochodowych'
+            'name' => 'ZSZ Mechanik pojazdów samochodowych'
         ]);
 
         DB::table('chat_rooms')->insert([
-            'name' => 'Nierób Wielozawodowa'
+            'name' => 'ZSZ Wielozawodowa'
         ]);
 
 
