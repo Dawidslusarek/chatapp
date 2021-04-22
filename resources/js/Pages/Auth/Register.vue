@@ -104,14 +104,10 @@
 
                 if(this.AllName.indexOf(this.form.name)==0)
                 {
-                    return alert("Ta nazwa urzytkownika jest już zajęta");
+                    return alert("Ta nazwa użytkownika jest już zajęta");
                 }
-
-
-
                 else
                 {
-
                 this.form.post(this.route('register'), {
                     onFinish: () => this.form.reset('password', 'password_confirmation'),
                 })
