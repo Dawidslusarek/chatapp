@@ -18,7 +18,7 @@ class CreateMessagesTable extends Migration
             $table->integer('room_id');
             $table->integer('user_id');
             $table->text('message');
-            $table->timestamp('published_at')->nullable()->default(1);
+            $table->timestamp('published_at')->nullable();
             $table->timestamps();
         });
     }

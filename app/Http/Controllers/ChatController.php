@@ -42,6 +42,7 @@ class ChatController extends Controller
     public function newMessage(Request $r, Message $message, $id)
     {
         $message->user_id = Auth::id();
+        $message->published_at = Carbon::now();
         $message->room_id = $id;
         $message->message = $r->message;
         $message->save();
