@@ -2,14 +2,14 @@
     <div>
         <!-- <div v-if="time <= message.created_at"> -->
     <div
-    
+
         v-if="userId !== message.user_id"
     >
 
                 <span
             class="messages rounded-lg"
             :class="['float-left', 'different']">
-            <span class="font-semibold antialiased">{{ message.user.name }} z {{ message.user.school }} {{ message.user.town }} :{{ message.message }}</span>
+            <span class="font-semibold antialiased">{{ message.user.name }} z {{ message.user.school }} {{ message.user.town }} : {{ message.message }}{{message.publihed_at}}</span>
         </span>
 
 
@@ -19,7 +19,7 @@
                 <span
             class="messages rounded-lg"
             :class="['float-right', 'mymessage']">
-            <span class="font-semibold antialiased">{{ message.message }}</span
+            <span class="font-semibold antialiased">{{ message.message }} {{ message.user.name }} {{message.publihed_at}}</span
             >
         </span>
     </div>
