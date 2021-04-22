@@ -27,7 +27,7 @@ class ChatController extends Controller
     public function messages(Message $message, $id)
     {
         $idUser = Auth::id();
-        $message['published_at'] = Carbon::now()->locale('pl_PL');
+        $message['published_at'] = Carbon::now();
         return [
             $message
                 ->join('users', 'users.id', '=', 'messages.user_id')
