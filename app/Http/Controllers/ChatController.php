@@ -27,6 +27,7 @@ class ChatController extends Controller
     public function messages(Message $message, $id)
     {
         $idUser = Auth::id();
+        $message['published_at'] = Carbon::now();
         return [
             $message
                 ->where('messages.room_id', '=', $id)
@@ -47,16 +48,5 @@ class ChatController extends Controller
         broadcast(new NewMessage($message))->toOthers();
 
         return $message;
-    }
-    public function deleteMessages(Message $message, $id)
-    {
-        $user_id = Auth::id();
-        $message
-            ->where([
-                ['room_id', '=', $id],
-                ['user_id', '=', $user_id]
-            ])
-
-            ->delete();
     }
 }

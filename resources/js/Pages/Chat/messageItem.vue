@@ -9,7 +9,7 @@
       "
     >
       <span class="font-semibold antialiased">{{ message.user.name }} </span>:
-      <span class="font-thin antialiased">{{ message.message }}</span>
+      <span class="font-thin antialiased">{{ message.message }} {{message.published_at}}</span>
     </span>
   </div>
 </template>
