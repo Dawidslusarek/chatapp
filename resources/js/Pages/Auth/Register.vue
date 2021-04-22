@@ -1,15 +1,17 @@
 <template>
     <jet-authentication-card>
         <template #logo>
-           <img src="https://zsnr2chatapp.herokuapp.com/images/logo_zs2.png" width="70px"/>
+           <img src="http://www.zsz2.ostrzeszow.pl/images/logo_zs2.png" width="70px"/>
         </template>
 
         <jet-validation-errors class="mb-4" />
 
         <form @submit.prevent="submit">
+
+
             <div>
                 <jet-label for="name" value="Nazwa" />
-                <jet-input id="name" type="text" class="mt-1 block w-full" v-model="form.name" required autofocus autocomplete="name" />
+                <jet-input id="name" type="text" class="mt-1 block w-full" v-model="form.name" required autofocus autocomplete="name" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode==32)"/>
             </div>
 
             <div class="mt-4">
@@ -86,16 +88,55 @@
                     password: '',
                     password_confirmation: '',
                     terms: false,
+                    userId: null,
                 })
             }
         },
+            computed: {
+                names: function () {
+                    return this.AllName;
+                }
+                },
 
         methods: {
             submit() {
+
+
+                if(this.AllName.indexOf(this.form.name)==0)
+                {
+                    return alert("Ta nazwa urzytkownika jest już zajęta");
+                }
+
+
+
+                else
+                {
+
                 this.form.post(this.route('register'), {
                     onFinish: () => this.form.reset('password', 'password_confirmation'),
                 })
-            }
-        }
+                }
+            },
+
+             getAllName() {
+            axios
+                .get("/getAllName")
+                .then((res) => {
+                    this.AllName = res.data;
+
+                    console.log(this.AllName);
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
+        },
+        },
+        beforeMount() {
+        this.getAllName();
+
+        },
+        handleEdit(reply) {
+                console.log('dsaa')
+            },
     }
 </script>

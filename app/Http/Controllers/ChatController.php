@@ -50,4 +50,9 @@ class ChatController extends Controller
 
         return $message;
     }
+    public function getAllName(User $user)
+    {
+        $names = User::all()->pluck('name');
+        return $names;
+    }
 }
