@@ -27,7 +27,7 @@ class ChatController extends Controller
     public function messages(Message $message, $id)
     {
         $idUser = Auth::id();
-        $message['published_at'] = Carbon::now();
+        $message['published_at'] = Carbon::now()->locale('pl_PL');
         return [
             $message
                 ->join('users', 'users.id', '=', 'messages.user_id')
@@ -42,7 +42,7 @@ class ChatController extends Controller
     public function newMessage(Request $r, Message $message, $id)
     {
         $message->user_id = Auth::id();
-        $message->published_at = Carbon::now();
+        $message->published_at = Carbon::now()->locale('pl_PL');
         $message->room_id = $id;
         $message->message = $r->message;
         $message->save();
