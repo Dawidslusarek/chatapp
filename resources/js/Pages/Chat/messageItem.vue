@@ -11,7 +11,7 @@
             :class="['float-left', 'different']">
             <span class="font-semibold antialiased">{{ message.message }}</span>
             </span>
-            <i>{{ message.published_at }} {{ message.user.name }} z {{ message.user.school }} {{ message.user.town }}</i>
+            <i class="nameAndTime">{{ message.published_at }} {{ message.user.name }} z {{ message.user.school }} {{ message.user.town }}</i>
 
     </div>
 
@@ -23,7 +23,7 @@
             :class="['float-right', 'mymessage']">
             <span class="font-semibold antialiased" >{{ message.message }} </span>
            </span>
-                    <i>{{ message.published_at }} {{ message.user.name }} z {{ message.user.school }} {{ message.user.town }}</i>
+                    <i class="nameAndTime">{{ message.published_at }} {{ message.user.name }} z {{ message.user.school }} {{ message.user.town }}</i>
 
     </div>
     </div>
@@ -52,6 +52,9 @@ export default {
   display:flex;
   flex-direction:column;
 }
-
+.nameAndTime{
+    font-size: 12px;
+    color: grey;
+}
 
 </style>
