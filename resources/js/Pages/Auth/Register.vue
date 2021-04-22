@@ -92,47 +92,6 @@
                 })
             }
         },
-            computed: {
-                names: function () {
-                    return this.AllName;
-                }
-                },
-
-        methods: {
-            submit() {
-
-
-                if(this.AllName.indexOf(this.form.name)==0)
-                {
-                    return alert("Ta nazwa użytkownika jest już zajęta");
-                }
-                else
-                {
-                this.form.post(this.route('register'), {
-                    onFinish: () => this.form.reset('password', 'password_confirmation'),
-                })
-                }
-            },
-
-             getAllName() {
-            axios
-                .get("/getAllName")
-                .then((res) => {
-                    this.AllName = res.data;
-
-                    console.log(this.AllName);
-                })
-                .catch((error) => {
-                    console.log(error);
-                });
-        },
-        },
-        beforeMount() {
-        this.getAllName();
-
-        },
-        handleEdit(reply) {
-                console.log('dsaa')
-            },
     }
+
 </script>
