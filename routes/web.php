@@ -29,21 +29,21 @@ Route::get('/', function () {
 Route::middleware(['auth:sanctum', 'verified'])->group(function() {
     Route::get('/dashboard', function () {
         return Inertia::render('Dashboard');
-    })->name('dashboard')->middleware('auth');;
+    })->name('dashboard')->middleware('auth');
     Route::get('/chat', function () {
         return Inertia::render('Chat/container');
-    })->name('Chat')->middleware('auth');;
+    })->name('Chat')->middleware('auth');
 });
 
 Route::middleware('auth:sanctum')->group(function() {
-Route::get('/userid', [ChatController::class, 'getUserId'])->middleware('auth');;
-Route::get('/chat/rooms', [ChatController::class, 'index'])->middleware('auth');;
-Route::get('/badwords',[BadwordController::class,'index'])->middleware('auth');;
+Route::get('/userid', [ChatController::class, 'getUserId'])->middleware('auth');
+Route::get('/chat/rooms', [ChatController::class, 'index'])->middleware('auth');
+Route::get('/badwords',[BadwordController::class,'index'])->middleware('auth');
 });
 
 Route::middleware('auth:sanctum')->prefix('/chat/room/{roomId}/')->group(function () {
-    Route::get('messages', [ChatController::class, 'messages'])->middleware('auth');;
-    Route::post('message', [ChatController::class, 'newMessage'])->middleware('auth');;
-    Route::delete('messages', [ChatController::class, 'deleteMessages'])->middleware('auth');;
+    Route::get('messages', [ChatController::class, 'messages'])->middleware('auth');
+    Route::post('message', [ChatController::class, 'newMessage'])->middleware('auth');
+
 });
 
