@@ -92,6 +92,14 @@
                 })
             }
         },
+         methods: {
+            submit() {
+                this.form.post(this.route('register'), {
+                    onFinish: () => this.form.reset('password', 'password_confirmation'),
+                })
+            }
+        }
     }
 
+    
 </script>
