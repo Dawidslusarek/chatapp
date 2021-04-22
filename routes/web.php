@@ -46,5 +46,5 @@ Route::middleware('auth:sanctum')->prefix('/chat/room/{roomId}/')->group(functio
     Route::post('message', [ChatController::class, 'newMessage'])->middleware('auth');
 
 });
-Route::get('/getAllName', [ChatController::class, 'getAllName']);
+
 
