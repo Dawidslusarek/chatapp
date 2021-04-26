@@ -10,7 +10,7 @@
             <div class="flex">
               <!-- Logo -->
               <div class="flex-shrink-0 flex items-center">
-                <img src="https://zsnr2chatapp.herokuapp.com/images/logo_zs2.png" width="70px">
+                <img src="http://www.zsz2.ostrzeszow.pl/images/logo_zs2.png" width="70px">
               </div>
 
               <!-- Navigation Links -->
@@ -160,11 +160,11 @@
                   <template #content>
                     <!-- Account Management -->
                     <div class="block px-4 py-2 text-xs text-gray-400">
-                      Manage Account
+                      Zarządzaj kontem
                     </div>
 
                     <jet-dropdown-link :href="route('profile.show')">
-                      Profile
+                      Profil
                     </jet-dropdown-link>
 
                     <jet-dropdown-link
@@ -179,7 +179,7 @@
                     <!-- Authentication -->
                     <form @submit.prevent="logout">
                       <jet-dropdown-link as="button">
-                        Log Out
+                        Wyloguj
                       </jet-dropdown-link>
                     </form>
                   </template>
