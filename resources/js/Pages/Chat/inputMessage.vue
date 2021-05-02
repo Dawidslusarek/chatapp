@@ -12,7 +12,7 @@
             @click="sendMessage()"
             class="col-span-1 bg-gray-500 hover:bg-blue-700 p-2 rounded text-white"
         >
-            Wyślij 
+            Wyślij
         </button>
     </div>
 </template>
@@ -22,21 +22,19 @@ import Input from "../../Jetstream/Input.vue";
 
 export default {
     components: { Input },
-    props: ["room","message"],
+    props: ["room", "message"],
     data() {
         return {
             message: "",
         };
     },
     methods: {
-            sendMessage() {
-
-                this.checkMessage();
-
+        sendMessage() {
+            this.checkMessage();
 
             if (this.message == "") {
                 return;
-            } 
+            }
             axios
                 .post(`/chat/room/${this.room.id}/message`, {
                     message: this.message,
@@ -51,39 +49,49 @@ export default {
                 .catch((error) => {
                     console.log(error);
                 });
-                
-            
         },
 
-                checkMessage(){
-                        let blacklisted = require('./wulgaryzmy.json');
-                            //2 looking for words
-                            let foundInText = false;
-                            let znaleziono = [];
-                            let gwiazdki = "";
-                            for (var i in blacklisted) { // loops through the blacklisted list
-                            if (this.message.toLowerCase().includes(blacklisted[i].toLowerCase())){
-                                znaleziono.push(blacklisted[i]);
-                                foundInText = true;
-                                }
-                            }
-                            // checks casesensitive words
-                        
-                            //3 deletes and send message
-                            if (foundInText) {
-                                for(var i=0; i < znaleziono.length; i++) {
-                                    let gw=znaleziono[i];
+        checkMessage() {
+            this.checkLength();
+            let blacklisted = require("./wulgaryzmy.json");
+            //2 looking for words
+            let foundInText = false;
+            let znaleziono = [];
+            let gwiazdki = "";
+            for (var i in blacklisted) {
+                // loops through the blacklisted list
+                if (
+                    this.message
+                        .toLowerCase()
+                        .includes(blacklisted[i].toLowerCase())
+                ) {
+                    znaleziono.push(blacklisted[i]);
+                    foundInText = true;
+                }
+            }
+            // checks casesensitive words
 
-                                    for(var j=0; j< gw.length; j++)
-                                    {
-                                        gwiazdki += "*"; 
-                                    }
-                                     this.message = this.message.toLowerCase().replaceAll(gw, gwiazdki);
-                                     gwiazdki="";
-                                }
-                            }
-                },
+            //3 deletes and send message
+            if (foundInText) {
+                for (var i = 0; i < znaleziono.length; i++) {
+                    let gw = znaleziono[i];
 
+                    for (var j = 0; j < gw.length; j++) {
+                        gwiazdki += "*";
+                    }
+                    this.message = this.message
+                        .toLowerCase()
+                        .replaceAll(gw, gwiazdki);
+                    gwiazdki = "";
+                }
+            }
+        },
+        checkLength() {
+            let mes = this.message;
+            if (mes.length > 300) {
+                this.message = mes.substring(0, 300);
+            }
+        },
     },
 };
 </script>

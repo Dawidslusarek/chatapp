@@ -44,7 +44,7 @@ class ChatController extends Controller
         $message->user_id = Auth::id();
         $message->published_at = Carbon::now()->locale('pl_PL');
         $message->room_id = $id;
-        $message->message = $r->message;
+        $message->message = substr($r->message, 0, 300);
         $message->save();
 
         broadcast(new NewMessage($message))->toOthers();
