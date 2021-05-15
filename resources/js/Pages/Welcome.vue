@@ -1,6 +1,6 @@
 <template>
     <app-layout>
-        <div class="navbar flex justify-end fixed">
+        <div class="navbar flex justify-end lg:fixed">
             <a href="/register">
                 <button
                     class="
@@ -47,7 +47,7 @@
                 <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                     <div class="flex flex-col items-center">
                         <div><h1>Technik Programista</h1></div>
-                        <div class="mx-5 grid grid-cols-2 text-justify">
+                        <div class="mx-5 grid lg:grid-cols-2 text-justify">
                             <div class="py-8">
                                 Dziś programista to jeden z najlepiej
                                 zarabiających i najbardziej poszukiwanych na
@@ -77,7 +77,7 @@
                             </div>
                         </div>
                         <div><h2>Do stworzenia chatu użyliśmy:</h2></div>
-                        <div class="grid grid-cols-2">
+                        <div class="grid lg:grid-cols-2">
                             <img
                                 src="https://zsnr2chatapp.herokuapp.com/images/vue.jpeg"
                             />
@@ -93,7 +93,7 @@
                                 Google Evana You.
                             </div>
                         </div>
-                        <div class="grid grid-cols-2">
+                        <div class="grid lg:grid-cols-2">
                             <div class="text-justify px-3 py-16">
                                 Laravel to stworzony przez Taylora Otwella w
                                 2011 roku framework PHP, który działa zgodnie ze
@@ -112,7 +112,7 @@
                                 />
                             </div>
                         </div>
-                        <div class="grid grid-cols-2">
+                        <div class="grid lg:grid-cols-2">
                             <div>
                                 <img
                                     src="https://zsnr2chatapp.herokuapp.com/images/jetstream.jpg"

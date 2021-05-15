@@ -1,13 +1,14 @@
 <template>
     <div class="grid grid-cols-2">
         <div class="font-bold text-xl">{{ selected.name }} Chat</div>
-        <div class="col-end-auto col-span-2">
+        <div class="col-end-auto col-span-2 p-0">
             <select
-                class="float-right"
+                class="w-screen"
                 v-model="selected"
                 @change="$emit('roomchanged', selected)"
             >
                 <option
+                class="w-screen"
                     v-for="(room, index) in Rooms"
                     :key="index"
                     :value="room"

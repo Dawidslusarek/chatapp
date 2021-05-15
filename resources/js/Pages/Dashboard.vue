@@ -1,7 +1,7 @@
 <template>
     <app-layout>
         <template #header>
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight py-6">
                 Informacje o nas
             </h2>
         </template>
@@ -9,9 +9,9 @@
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                    <div class="flex flex-col items-center">
+                    <div class="flex flex-col items-center py-5">
                         <div><h1>Technik Programista</h1></div>
-                        <div class="mx-5 grid grid-cols-2 text-justify">
+                        <div class="mx-5 grid lg:grid-cols-2 text-justify">
                             <div class="py-8">
                                 Dziś programista to jeden z najlepiej
                                 zarabiających i najbardziej poszukiwanych na
@@ -41,7 +41,7 @@
                             </div>
                         </div>
                         <div><h2>Do stworzenia chatu użyliśmy:</h2></div>
-                        <div class="grid grid-cols-2">
+                        <div class="grid lg:grid-cols-2">
                             <img
                                 src="https://zsnr2chatapp.herokuapp.com/images/vue.jpeg"
                             />
@@ -57,9 +57,14 @@
                                 Google Evana You.
                             </div>
                         </div>
-                        <div class="grid grid-cols-2">
+                        <div class="grid lg:grid-cols-2">
                             <div class="text-justify px-3 py-16">
-                                Laravel to stworzony przez Taylora Otwella w
+                                <img
+                                    src="https://zsnr2chatapp.herokuapp.com/images/laravel.jpg"
+                                />
+                            </div>
+                            <div class="px-8">
+                              Laravel to stworzony przez Taylora Otwella w
                                 2011 roku framework PHP, który działa zgodnie ze
                                 strukturą MVC (Model View Controller). Jego
                                 sporą zaletą jest licencja Open Source, o którą
@@ -70,13 +75,8 @@
                                 sprawia trudności, a próg wejścia do grona
                                 programistów Laravela jest stosunkowo niski.
                             </div>
-                            <div class="px-8">
-                                <img
-                                    src="https://zsnr2chatapp.herokuapp.com/images/laravel.jpg"
-                                />
-                            </div>
                         </div>
-                        <div class="grid grid-cols-2">
+                        <div class="grid lg:grid-cols-2">
                             <div>
                                 <img
                                     src="https://zsnr2chatapp.herokuapp.com/images/jetstream.jpg"

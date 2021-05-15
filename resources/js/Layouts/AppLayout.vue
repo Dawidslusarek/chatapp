@@ -277,7 +277,7 @@
                 :href="route('profile.show')"
                 :active="route().current('profile.show')"
               >
-                Profile
+                Profil
               </jet-responsive-nav-link>
 
               <jet-responsive-nav-link
@@ -291,7 +291,7 @@
               <!-- Authentication -->
               <form method="POST" @submit.prevent="logout">
                 <jet-responsive-nav-link as="button">
-                  Log Out
+                  Wyloguj się
                 </jet-responsive-nav-link>
               </form>
 
@@ -359,7 +359,7 @@
 
       <!-- Page Heading -->
       <header class="bg-white shadow" v-if="$slots.header">
-        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto py-6 md:px-4 sm:px-6 lg:px-8">
           <slot name="header"></slot>
         </div>
       </header>
