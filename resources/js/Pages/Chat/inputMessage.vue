@@ -1,17 +1,17 @@
 <template charset="UTF-8">
     <div style="border-top: 1px solid black" class="grid grid-cols-12">
-        <div class="maxlength" ><div class="input-group-addon" v-text="(max - message.length)"></div>/300</div>
+        <div class="maxlength col-span-3 lg:col-span-2" ><div class="input-group-addon" v-text="(max - message.length)"></div>/300</div>
         <input
             type="text"
-            class="col-span-9 p-2 outline-none border-none"
+            class="col-span-6 lg:col-span-8 p-2 outline-none border-none"
             v-model="message"
             @keyup.enter="sendMessage()"
-            placeholder="Napisz coś"
+            placeholder="Zadaj pytanie.."
             :maxlength="max"
         />
         <button
             @click="sendMessage()"
-            class="col-span-2 bg-gray-500 hover:bg-blue-700 p-2 rounded text-white"
+            class="col-span-3 lg:col-span-2 bg-gray-500 hover:bg-blue-700 p-2 rounded text-white"
         >
             Wyślij
         </button>

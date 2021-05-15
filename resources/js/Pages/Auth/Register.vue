@@ -10,7 +10,7 @@
 
 
             <div>
-                <jet-label for="name" value="Nazwa" />
+                <jet-label for="name" value="Imię i Nazwisko" />
                 <jet-input id="name" type="text" class="mt-1 block w-full" v-model="form.name" required autofocus autocomplete="name" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode==32)"/>
             </div>
 
@@ -28,12 +28,6 @@
                 <jet-label for="password" value="Hasło" />
                 <jet-input id="password" type="password" class="mt-1 block w-full" v-model="form.password" required autocomplete="new-password" />
             </div>
-
-            <div class="mt-4">
-                <jet-label for="password_confirmation" value="Potwierdz hasło" />
-                <jet-input id="password_confirmation" type="password" class="mt-1 block w-full" v-model="form.password_confirmation" required autocomplete="new-password" />
-            </div>
-
             <div class="mt-4" v-if="$page.props.jetstream.hasTermsAndPrivacyPolicyFeature">
                 <jet-label for="terms">
                     <div class="flex items-center">

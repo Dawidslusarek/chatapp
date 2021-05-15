@@ -1,9 +1,9 @@
 <template>
     <div class="grid grid-cols-2">
-        <div class="font-bold text-xl">{{ selected.name }} Chat</div>
+        <div class="font-bold text-xl">{{ selected.name }}</div>
         <div class="col-end-auto col-span-2 p-0">
             <select
-                class="w-screen"
+                class="w-full lg:w-auto"
                 v-model="selected"
                 @change="$emit('roomchanged', selected)"
             >
