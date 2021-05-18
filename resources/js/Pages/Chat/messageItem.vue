@@ -41,6 +41,7 @@ export default {
   margin: 5px 0px;
   width: auto;
   color: white;
+  line-break: anywhere;
 }
 .mymessage {
   background: #3a2fce;
