@@ -27,7 +27,7 @@ class ChatRoomSeeder extends Seeder
         ]);
 
         DB::table('chat_rooms')->insert([
-            'name' => 'Technik informatyk'
+            'name' => 'Technik Informatyk'
         ]);
 
         DB::table('chat_rooms')->insert([
@@ -35,7 +35,7 @@ class ChatRoomSeeder extends Seeder
         ]);
 
         DB::table('chat_rooms')->insert([
-            'name' => 'Technik Pojazdów samochodowych'
+            'name' => 'Technik Pojazdów Samochodowych'
         ]);
 
         DB::table('chat_rooms')->insert([
@@ -43,39 +43,45 @@ class ChatRoomSeeder extends Seeder
         ]);
 
         DB::table('chat_rooms')->insert([
-            'name' => 'Technik Urządzeń i systemów energetyki odnawialnej'
+            'name' => 'OZE -Technik Urządzeń i Systemów Energetyki Odnawialnej'
         ]);
 
         DB::table('chat_rooms')->insert([
-            'name' => 'Technik Architektury krajobrazu'
+            'name' => 'Technik Architektury Krajobrazu'
         ]);
 
         DB::table('chat_rooms')->insert([
-            'name' => 'Technik Żywienia i usług gastronomicznych'
+            'name' => 'Technik Żywienia i Usług Gastronomicznych'
         ]);
 
         DB::table('chat_rooms')->insert([
-            'name' => 'Technik Turystyki wiejskiej'
+            'name' => 'Technik Rolnik'
         ]);
 
         DB::table('chat_rooms')->insert([
-            'name' => 'LO profil informatyczno-językowy'
+            'name' => 'Technik Elektryk'
         ]);
 
         DB::table('chat_rooms')->insert([
-            'name' => 'LO profil biologiczno-chemiczny z kosmetologią i promocją zdrowia'
+            'name' => 'LO profil Humanistyczno - społeczny'
         ]);
 
         DB::table('chat_rooms')->insert([
-            'name' => 'LO profil profil turystyczno-europejski'
+            'name' => 'LO profil Turystyczno - przyrodniczy'
         ]);
 
         DB::table('chat_rooms')->insert([
-            'name' => 'ZSZ Mechanik pojazdów samochodowych'
+            'name' => 'Szkoła Branżowa - Elektryk'
         ]);
 
         DB::table('chat_rooms')->insert([
-            'name' => 'ZSZ Wielozawodowa'
+            'name' => 'Szkoła Branżowa - Magazynier - logistyk'
+        ]);
+        DB::table('chat_rooms')->insert([
+            'name' => 'Szkoła Branżowa - Mechanik Pojazdów Samochodowych'
+        ]);
+        DB::table('chat_rooms')->insert([
+            'name' => 'Szkoła Branżowa - Klasa wielozawodowa'
         ]);
 
 
