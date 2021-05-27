@@ -48,7 +48,7 @@ export default {
     },
     methods: {
         sendMessage() {
-            this.checkLength();
+            this.checkMessage();
 
             if (this.message == "") {
                 return;
@@ -117,7 +117,6 @@ export default {
         limitMessage() {
             if (this.limit === true) {
                 var interval = setInterval(() => {
-                    console.log("test");
                 }, 2000);
                 setTimeout(() => {
                     clearInterval(interval);
