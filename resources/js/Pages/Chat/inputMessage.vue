@@ -103,7 +103,7 @@ export default {
                     this.message = this.message
                         .toLowerCase()
                         .replaceAll(gw, gwiazdki);
-                    gwiazdki = "";
+                    gwiazdki = ""; 
                 }
             }
         },
